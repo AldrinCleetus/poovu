@@ -15,7 +15,7 @@ code {
 }
 
 .custom-card{
-  width: 200px;
+  width: 200px !important;
   border-radius: 1em;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
@@ -26,3 +26,4 @@ code {
   transition: all 0.2s ease-in-out;
 
 }
+
