@@ -22,15 +22,15 @@ const NavBar = () => {
   <div class="navbar-menu is-active has-text-centered">
     <div class="navbar-end">
       <div className="navbar-item">
-        <button className="button is-black is-rounded CButton">About</button>
+        <button className="button is-black is-rounded CButton pop">About</button>
       </div>
 
       <div className="navbar-item">
-        <a href="#stats" className="button is-black is-rounded CButton">Gallery</a>
+        <a href="#stats" className="button is-black is-rounded CButton pop">Gallery</a>
       </div>
 
       <div className="navbar-item">
-        <button className="button CButton is-primary is-rounded">Create</button>
+        <button className="button CButton is-primary is-rounded pop">Create</button>
       </div>
 
       

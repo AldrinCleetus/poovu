@@ -22,8 +22,8 @@ const LandingPage = () => {
                         </div>
                         <div className="column has-text-left mt-3 m-0 p-0">
                         
-                            <button className="button CButton is-primary customRounded px-6 mr-4 is-size-3">Gallery</button>
-                            <button className="button CButton is-primary customRounded px-6 ml-4 is-size-3">Create</button>
+                            <button className="button pop CButton is-primary customRounded px-6 mr-4 is-size-3">Gallery</button>
+                            <button className="button pop CButton is-primary customRounded px-6 ml-4 is-size-3">Create</button>
                         
                         </div>
                         <div className="column"></div>

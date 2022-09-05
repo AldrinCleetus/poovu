@@ -27,3 +27,7 @@ code {
 
 }
 
+.pop:hover{
+  outline: solid white 2px;
+}
+
