@@ -1,0 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
+
+// Color Variables
+$myBlack: #232323;
+$darkerBlack: #161616;
+$myGreen: #7CE8C4;
+
+$navbar-height: 4rem;
+$navbar-item-img-max-height:4rem;
+
+$black: $myBlack;
+$primary: $myGreen;
+$info: $darkerBlack;
+
+$family-sans-serif: 'Montserrat', sans-serif;
+
+
+@import "~bulma/bulma.sass";

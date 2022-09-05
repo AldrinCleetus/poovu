@@ -13,3 +13,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.custom-card{
+  width: 200px;
+  border-radius: 1em;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.custom-card:hover{
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+
+}

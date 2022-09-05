@@ -1,19 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Stage, Layer, Circle, Text, Group } from "react-konva";
-import Square from "./Components/Square";
+import { Stage, Layer, Text, Group } from "react-konva";
+import Square from "./Utilities/Square";
+import Circles from "./Utilities/Circles";
+import LandingPage from "./Components/LandingPage";
+import 'bulma/css/bulma.min.css';
+import "./styles.scss"
 
 export default function App() {
  
   const [allSquares,setSquares] = useState([])
+  const [allCircles,setCircle] = useState([])
 
   const [selectedShape,setSelectedShape] = useState(null)
   const [selectedTool, setSelectedTool] = useState("square")
-  
-
-  useEffect(()=>{
-    console.log(selectedShape)
-  },[selectedShape])
-
 
 
   const placeShape = (e)=>{
@@ -27,7 +26,7 @@ export default function App() {
 
 
     
-    if(selectedTool === "square" && clickedOnEmpty){
+    if(selectedTool === "square"){
       setSquares((prev) =>{
         return([
           ...prev,
@@ -43,6 +42,21 @@ export default function App() {
       })
     }
 
+    if(selectedTool === "circle"){
+      setCircle((prev) =>{
+        return([
+          ...prev,
+          {
+            x: e.evt.clientX,
+            y: e.evt.clientY - 20,
+            radius: 20,
+            fill: 'lightblue',
+            id: 'circle' + Math.random(),
+          } 
+        ])
+      })
+    }
+
     
   }
 
@@ -51,6 +65,23 @@ export default function App() {
 
   return (
     <div>
+      {/* <div>
+        <button
+        onClick={()=>{
+          setSelectedTool("square")
+        }}> Square</button>
+        <button
+        
+        onClick={()=>{
+         setSelectedTool("circle")
+        }}> Circle </button>
+        <button
+        
+         onClick={()=>{
+          setSelectedTool(null)
+         }}> Select </button>
+
+      </div>
       <Stage 
       width={window.innerWidth} 
       height={window.innerHeight}
@@ -65,7 +96,7 @@ export default function App() {
         return(
           <Square
           shapeProperties={el}
-          id={el.id + idx}
+          id={el.id}
           isSelected ={ el.id === selectedShape}
           onChange ={(newAttr)=>{
             const sqrs = allSquares.slice()
@@ -81,9 +112,30 @@ export default function App() {
         )
       } )}
 
+      {allCircles.map( (el,idx)=>{
+              return(
+                <Circles
+                shapeProperties={el}
+                id={el.id}
+                isSelected ={ el.id === selectedShape}
+                onChange ={(newAttr)=>{
+                  const circ = allCircles.slice()
+                  circ[idx] = newAttr
+                  setCircle(circ)
+                }}
+                onSelect={()=>{
+                  setSelectedShape(allCircles[idx].id)
+                }}
+
+
+                ></Circles>
+              )
+            } )}
+
 
       </Layer>
-    </Stage>
+    </Stage> */}
+    <LandingPage></LandingPage>
     </div>
     
   );
