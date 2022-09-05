@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const NavBar = () => {
     return ( 
         <div className="">
@@ -22,15 +24,18 @@ const NavBar = () => {
   <div class="navbar-menu is-active has-text-centered">
     <div class="navbar-end">
       <div className="navbar-item">
-        <button className="button is-black is-rounded CButton pop">About</button>
+        <button className="button is-black is-rounded CButton pop"><Link to={"/"}>
+        About</Link></button>
       </div>
 
       <div className="navbar-item">
-        <a href="#stats" className="button is-black is-rounded CButton pop">Gallery</a>
+        <a href="#stats" className="button is-black is-rounded CButton pop"><Link to={"/"}>
+        Gallery</Link></a>
       </div>
 
       <div className="navbar-item">
-        <button className="button CButton is-primary is-rounded pop">Create</button>
+        <button className="button CButton is-primary is-rounded pop"><Link to={"/create"}>
+        Create</Link></button>
       </div>
 
       

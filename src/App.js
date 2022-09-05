@@ -65,77 +65,7 @@ export default function App() {
 
   return (
     <div>
-      {/* <div>
-        <button
-        onClick={()=>{
-          setSelectedTool("square")
-        }}> Square</button>
-        <button
-        
-        onClick={()=>{
-         setSelectedTool("circle")
-        }}> Circle </button>
-        <button
-        
-         onClick={()=>{
-          setSelectedTool(null)
-         }}> Select </button>
-
-      </div>
-      <Stage 
-      width={window.innerWidth} 
-      height={window.innerHeight}
-      
-      onMouseDown={placeShape}
-
-      >
-      <Layer>
-      
-
-      {allSquares.map( (el,idx)=>{
-        return(
-          <Square
-          shapeProperties={el}
-          id={el.id}
-          isSelected ={ el.id === selectedShape}
-          onChange ={(newAttr)=>{
-            const sqrs = allSquares.slice()
-            sqrs[idx] = newAttr
-            setSquares(sqrs)
-          }}
-          onSelect={()=>{
-            setSelectedShape(allSquares[idx].id)
-          }}
-
-
-          ></Square>
-        )
-      } )}
-
-      {allCircles.map( (el,idx)=>{
-              return(
-                <Circles
-                shapeProperties={el}
-                id={el.id}
-                isSelected ={ el.id === selectedShape}
-                onChange ={(newAttr)=>{
-                  const circ = allCircles.slice()
-                  circ[idx] = newAttr
-                  setCircle(circ)
-                }}
-                onSelect={()=>{
-                  setSelectedShape(allCircles[idx].id)
-                }}
-
-
-                ></Circles>
-              )
-            } )}
-
-
-      </Layer>
-    </Stage> */}
-    <LandingPage></LandingPage>
+      <LandingPage></LandingPage>
     </div>
     
   );
