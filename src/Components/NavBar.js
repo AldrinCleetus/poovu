@@ -34,7 +34,7 @@ const NavBar = () => {
       </div>
 
       <div className="navbar-item">
-        <button className="button CButton is-primary is-rounded pop"><Link to={"/create"}>
+        <button className="button CButton is-primary customRounded pop"><Link to={"/create"}>
         Create</Link></button>
       </div>
 
