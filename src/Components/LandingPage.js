@@ -13,20 +13,20 @@ const LandingPage = () => {
                 <div className="hero-body">
                    <div className="columns ">
                     <div className="column is-half">
-                        <div className=" is-size-1-fullhd is-size-2-mobile has-text-primary">
+                        <div className=" is-size-1-fullhd is-size-2-mobile has-text-primary  mb-5 ">
                         Generate Beautiful Pokkal Designs
                         </div>
 
-                        <div className="is-size-3-fullhd is-size-5-mobile">
+                        <div className="is-size-3-fullhd is-size-5-mobile  mb-5">
                         Using our custom pokkalam design tool create beautiful designs easily 
                         </div>
-                        <div className="column has-text-left mt-3 m-0 p-0">
+                        <div className="column has-text-left mt-3 m-0 p-0  mb-5">
                         
                             <button className="button pop CButton is-primary customRounded px-6 mr-4 is-size-3">Gallery</button>
                             <button className="button pop CButton is-primary customRounded px-6 ml-4 is-size-3">Create</button>
                         
                         </div>
-                        <div className="column"></div>
+                        <div className="column "></div>
 
                         <div className="columns">
                             <PooklamCards
