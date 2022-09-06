@@ -24,7 +24,7 @@ const DesignKanvas = () => {
     console.log(e.target.getStage().getPointerPosition())
 
 
-    if(selectedTool === "square"){
+    if(selectedTool === "square" && clickedOnEmpty){
         
       
       
@@ -63,10 +63,9 @@ const DesignKanvas = () => {
 
     return ( 
         <Stage 
-      width={900} 
-      height={900}
+      width={700} 
+      height={700}
       onClick={placeShape}
-      //onMouseDown={placeShape}
 
       >
       <Layer
