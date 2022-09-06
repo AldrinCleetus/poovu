@@ -3,7 +3,7 @@ import { Stage, Layer, Text, Group } from "react-konva";
 import Square from "../Utilities/Square";
 import Circles from "../Utilities/Circles";
 
-const DesignKanvas = ({currentTool}) => {
+const DesignKanvas = ({currentTool,shapeProperties}) => {
 
     const [allSquares,setSquares] = useState([])
     const [allCircles,setCircle] = useState([])
@@ -22,6 +22,8 @@ const DesignKanvas = ({currentTool}) => {
           console.log("clicked on nothing")
       }
 
+
+      // Fix this later
       const clearEverything = ()=>{
         setSquares([])
         setCircle([])
@@ -44,8 +46,8 @@ const DesignKanvas = ({currentTool}) => {
               {
               x: e.target.getStage().getPointerPosition().x,
               y: e.target.getStage().getPointerPosition().y,
-              width: 100,
-              height: 100,
+              width: Number(shapeProperties.width),
+              height: Number(shapeProperties.height),
               fill: 'lightblue',
               id: 'das' + Math.random(),
               } 
@@ -60,7 +62,7 @@ const DesignKanvas = ({currentTool}) => {
             {
             x: e.target.getStage().getPointerPosition().x,
             y: e.target.getStage().getPointerPosition().y,
-            radius: 20,
+            radius: Number(shapeProperties.radius),
             fill: 'lightblue',
             id: 'circle' + Math.random(),
             } 

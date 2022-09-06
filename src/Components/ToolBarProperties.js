@@ -1,31 +1,64 @@
 import { useState } from "react";
-import { Value } from "sass";
 
-const ToolBarProperties = () => {
+const ToolBarProperties = ({setProperty}) => {
     
-const [shapeProperties,setShapeProperties] = useState({
-    height:"10",
-    width:"10",
-    radius:"10"
-})
 
+    const changeHeight= (val)=>{
+        setProperty((prev)=>{
+        return {
+            ...prev,
+            height:val.target.value
+        }
+       })
 
-const changeValue = (val)=>{
-    // switch(val.target.name){
-    //     case "height": console.log("hehight cahnged")
-    //     case "width": console.log("wjfjsfj sklf")
-    // }
-    console.log(val.target.name)
-}
+    }
+
+    const changeWidth= (val)=>{
+        setProperty((prev)=>{
+         return {
+             ...prev,
+             width:val.target.value
+         }
+        })
+ 
+     }
+
+     const changeRadius= (val)=>{
+        setProperty((prev)=>{
+         return {
+             ...prev,
+             radius:val.target.value
+         }
+        })
+ 
+     }
+
 
     
     return ( 
         <div>
-            <p className="is-size-3">Position</p>
-            <input class="input is-medium my-2" type="text" placeholder="Height" name="height" onChange={changeValue
+            <p className="is-size-3">Height and Width</p>
+            <input class="input is-medium my-2"  
+            type="text" 
+            placeholder="Height"
+            onKeyPress={(event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault()}}}
+            name="height" 
+            onChange={changeHeight
             }></input>
-            <input class="input is-medium my-2" type="text" placeholder="Width" name="width" onChange={changeValue
+            <input class="input is-medium my-2" type="text" placeholder="Width" 
+            onKeyPress={(event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault()}}}
+            name="width" onChange={changeWidth
             }></input>
+
+            <p className="is-size-3">Radius</p>
+            <input class="input is-medium my-2"  
+            type="text" 
+            placeholder="Radius"
+            onKeyPress={(event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault()}}}
+            name="radius" 
+            onChange={changeRadius
+            }></input>
+            
 
 
         </div>
