@@ -33,10 +33,24 @@ code {
 
 
 .red{
-  background-color:rgb(250, 54, 54) !important;
+  background-color:#fa3636 !important;
 }
 
 .blue{
-  background-color: rgb(41, 41, 255) !important;
+  background-color: #2929ff !important;
 }
+
+.lightblue{
+  background-color: #2f2fa8 !important;
+}
+
+.lightred{
+  background-color:#ff6464 !important;
+}
+
+.green{
+  background-color:#49f995 !important;
+}
+
+
 

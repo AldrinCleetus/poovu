@@ -7,10 +7,14 @@ const DesignTool = () => {
     
     const [selectedTool,setSelectedTool] = useState("square")
     const [shapeProperties,setShapeProperties] = useState({
-      height:"10",
-      width:"10",
-      radius:"10"
+      height:"50",
+      width:"50",
+      radius:"20"
   })
+
+  const [currentColor,setCurrentColor] = useState('lightblue')
+
+
 
     return ( 
         <React.Fragment>
@@ -23,10 +27,10 @@ const DesignTool = () => {
           <div className="columns">
             <ToolBar setTool={setSelectedTool}></ToolBar>
             <div class="column has-background-black">
-              <DesignKanvas currentTool={selectedTool} shapeProperties={shapeProperties}></DesignKanvas>
+              <DesignKanvas currentTool={selectedTool} shapeProperties={shapeProperties} currentColor={currentColor}></DesignKanvas>
             </div>
             <div class="column ">
-              <ToolBarProperties setProperty={setShapeProperties} currentTool={selectedTool}></ToolBarProperties>
+              <ToolBarProperties setProperty={setShapeProperties} currentTool={selectedTool} setCurrentColor={setCurrentColor}></ToolBarProperties>
             </div>
           
           </div>
@@ -35,8 +39,9 @@ const DesignTool = () => {
 
 
           </div>
-
+          
         </div>
+       
       
         </React.Fragment>
      );

@@ -3,14 +3,18 @@ import { Stage, Layer, Text, Group } from "react-konva";
 import Square from "../Utilities/Square";
 import Circles from "../Utilities/Circles";
 
-const DesignKanvas = ({currentTool,shapeProperties}) => {
+const DesignKanvas = ({currentTool,shapeProperties,currentColor}) => {
 
     const [allSquares,setSquares] = useState([])
     const [allCircles,setCircle] = useState([])
 
     const [selectedShape,setSelectedShape] = useState(null)
 
+    const stageRef = useRef()
 
+    const exportImage = ()=>{
+      const URI = stageRef.current.toDataURL()
+    }
     
 
     const placeShape = (e)=>{
@@ -48,14 +52,14 @@ const DesignKanvas = ({currentTool,shapeProperties}) => {
               y: e.target.getStage().getPointerPosition().y - Number(shapeProperties.height)/2,
               width: Number(shapeProperties.width),
               height: Number(shapeProperties.height),
-              fill: 'lightblue',
+              fill: currentColor,
               id: 'das' + Math.random(),
               } 
           ])
           })
       }
 
-    if(currentTool === "circle"){
+    if(currentTool === "circle" && clickedOnEmpty){
         setCircle((prev) =>{
         return([
             ...prev,
@@ -63,7 +67,7 @@ const DesignKanvas = ({currentTool,shapeProperties}) => {
             x: e.target.getStage().getPointerPosition().x,
             y: e.target.getStage().getPointerPosition().y,
             radius: Number(shapeProperties.radius),
-            fill: 'lightblue',
+            fill: currentColor,
             id: 'circle' + Math.random(),
             } 
         ])
@@ -78,10 +82,27 @@ const DesignKanvas = ({currentTool,shapeProperties}) => {
       width={700} 
       height={700}
       onClick={placeShape}
-
+      ref={stageRef}
       >
       <Layer
       >
+
+      <Circles
+                      shapeProperties={{
+                        x: 350,
+                        y: 350,
+                        radius: 200,
+                        fill: 'grey',
+                        id: 'circleMain',
+                        }}
+                      id={"circleMain"}
+                      isSelected ={ "circleMain" === selectedShape}
+                      onSelect={()=>{
+                        setSelectedShape("circleMain")
+                      }}
+
+
+                      ></Circles>
       
 
       {allSquares.map( (el,idx)=>{

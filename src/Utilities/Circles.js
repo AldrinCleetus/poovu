@@ -30,7 +30,7 @@ const Circles = ({shapeProperties,isSelected,onChange,onSelect}) => {
                 id= {shapeProperties.id}
                 
                 draggable={true}
-                fill={isSelected ? "lightgreen" : "lightblue"}
+                fill={isSelected ? "lightgreen" : shapeProperties.fill}
                 onDragEnd={e=>{
                     onChange({
                         ...shapeProperties,

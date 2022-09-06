@@ -30,7 +30,7 @@ const Square = ({shapeProperties,isSelected,onChange,onSelect}) => {
                 width={shapeProperties.width}
                 height={shapeProperties.height}
                 draggable={true}
-                fill={isSelected ? "lightgreen" : "lightblue"}
+                fill={isSelected ? "lightgreen" : shapeProperties.fill}
                 onDragEnd={e=>{
                     onChange({
                         ...shapeProperties,
