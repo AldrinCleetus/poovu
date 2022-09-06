@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 
-const ToolBarProperties = ({setProperty,currentTool,setCurrentColor}) => {
+const ToolBarProperties = ({setProperty,currentTool,setCurrentColor,setDownloadImage}) => {
 
     const exportImage = ()=>{
-        console.log("ehllo")
+        setDownloadImage(true)
     }
     
     // Refactor this code ....

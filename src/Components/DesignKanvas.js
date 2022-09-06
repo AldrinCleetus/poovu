@@ -2,8 +2,9 @@ import React, { useState, useRef, useEffect } from "react";
 import { Stage, Layer, Text, Group } from "react-konva";
 import Square from "../Utilities/Square";
 import Circles from "../Utilities/Circles";
+import { saveAs } from 'file-saver';
 
-const DesignKanvas = ({currentTool,shapeProperties,currentColor}) => {
+const DesignKanvas = ({currentTool,shapeProperties,currentColor,downloadImage,setDownloadImage}) => {
 
     const [allSquares,setSquares] = useState([])
     const [allCircles,setCircle] = useState([])
@@ -12,9 +13,19 @@ const DesignKanvas = ({currentTool,shapeProperties,currentColor}) => {
 
     const stageRef = useRef()
 
-    const exportImage = ()=>{
-      const URI = stageRef.current.toDataURL()
-    }
+   useEffect( ()=>{
+
+      
+      if(downloadImage){
+        const URI = stageRef.current.toDataURL()
+        console.log("image downloading")
+        saveAs(URI, "pooklamdesign.png");
+        setDownloadImage(false)
+      }
+    
+   },[downloadImage])
+
+   
     
 
     const placeShape = (e)=>{

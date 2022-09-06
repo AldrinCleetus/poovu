@@ -14,6 +14,7 @@ const DesignTool = () => {
 
   const [currentColor,setCurrentColor] = useState('lightblue')
 
+  const [downloadImage,setDownloadImage] = useState(false)
 
 
     return ( 
@@ -27,10 +28,10 @@ const DesignTool = () => {
           <div className="columns">
             <ToolBar setTool={setSelectedTool}></ToolBar>
             <div class="column has-background-black">
-              <DesignKanvas currentTool={selectedTool} shapeProperties={shapeProperties} currentColor={currentColor}></DesignKanvas>
+              <DesignKanvas currentTool={selectedTool} shapeProperties={shapeProperties} currentColor={currentColor} downloadImage={downloadImage} setDownloadImage={setDownloadImage}></DesignKanvas>
             </div>
             <div class="column ">
-              <ToolBarProperties setProperty={setShapeProperties} currentTool={selectedTool} setCurrentColor={setCurrentColor}></ToolBarProperties>
+              <ToolBarProperties setProperty={setShapeProperties} currentTool={selectedTool} setCurrentColor={setCurrentColor} setDownloadImage={setDownloadImage}></ToolBarProperties>
             </div>
           
           </div>
