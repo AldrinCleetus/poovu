@@ -16,7 +16,7 @@ const Home = () => {
                         </div>
                         <div className="column has-text-left mt-3 m-0 p-0  mb-5">
                         
-                            <button className="button pop CButton is-primary customRounded px-6 mr-4 is-size-3"><Link to={"/"}>
+                            <button className="button pop CButton is-primary customRounded px-6 mr-4 is-size-3"><Link to={"/gallery"}>
                             Gallery</Link></button>
                             <button className="button pop CButton is-primary customRounded px-6 ml-4 is-size-3"><Link to={"/create"}>
                             Create</Link></button>

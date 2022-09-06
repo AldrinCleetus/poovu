@@ -13,6 +13,14 @@ const DesignKanvas = ({currentTool,shapeProperties,currentColor,downloadImage,se
 
     const stageRef = useRef()
 
+    const [initialCircle,setInitialCircle] = useState({
+      x: 350,
+      y: 350,
+      radius: 200,
+      fill: 'grey',
+      id: 'circleMain',
+      })
+
    useEffect( ()=>{
 
       
@@ -99,17 +107,16 @@ const DesignKanvas = ({currentTool,shapeProperties,currentColor,downloadImage,se
       >
 
       <Circles
-                      shapeProperties={{
-                        x: 350,
-                        y: 350,
-                        radius: 200,
-                        fill: 'grey',
-                        id: 'circleMain',
-                        }}
+                      shapeProperties={initialCircle}
                       id={"circleMain"}
                       isSelected ={ "circleMain" === selectedShape}
                       onSelect={()=>{
                         setSelectedShape("circleMain")
+                      }}
+                      onChange ={(newAttr)=>{
+                       
+                        setInitialCircle(newAttr)
+
                       }}
 
 

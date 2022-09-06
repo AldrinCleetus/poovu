@@ -25,11 +25,11 @@ const NavBar = () => {
     <div class="navbar-end">
       <div className="navbar-item">
         <button className="button is-black is-rounded CButton pop"><Link to={"/"}>
-        About</Link></button>
+        Home</Link></button>
       </div>
 
       <div className="navbar-item">
-        <a href="#stats" className="button is-black is-rounded CButton pop"><Link to={"/"}>
+        <a href="#stats" className="button is-black is-rounded CButton pop"><Link to={"/gallery"}>
         Gallery</Link></a>
       </div>
 
