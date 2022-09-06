@@ -31,3 +31,12 @@ code {
   outline: solid white 2px;
 }
 
+
+.red{
+  background-color:rgb(250, 54, 54) !important;
+}
+
+.blue{
+  background-color: rgb(41, 41, 255) !important;
+}
+

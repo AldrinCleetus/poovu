@@ -15,9 +15,10 @@ const DesignTool = () => {
     return ( 
         <React.Fragment>
 
+
         <div className="hero-body has-background-info ">
 
-
+        
         <div className="container is-fluid">
           <div className="columns">
             <ToolBar setTool={setSelectedTool}></ToolBar>
@@ -25,7 +26,7 @@ const DesignTool = () => {
               <DesignKanvas currentTool={selectedTool} shapeProperties={shapeProperties}></DesignKanvas>
             </div>
             <div class="column ">
-              <ToolBarProperties setProperty={setShapeProperties}></ToolBarProperties>
+              <ToolBarProperties setProperty={setShapeProperties} currentTool={selectedTool}></ToolBarProperties>
             </div>
           
           </div>

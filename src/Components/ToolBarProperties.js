@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ToolBarProperties = ({setProperty}) => {
+const ToolBarProperties = ({setProperty,currentTool}) => {
     
 
     const changeHeight= (val)=>{
@@ -34,30 +34,41 @@ const ToolBarProperties = ({setProperty}) => {
      }
 
 
-    
-    return ( 
+     return ( 
         <div>
             <p className="is-size-3">Height and Width</p>
-            <input class="input is-medium my-2"  
+            <input className="input is-rounded is-medium my-2"  
             type="text" 
             placeholder="Height"
             onKeyPress={(event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault()}}}
             name="height" 
             onChange={changeHeight
             }></input>
-            <input class="input is-medium my-2" type="text" placeholder="Width" 
+            <input className="input is-rounded is-medium my-2" type="text" placeholder="Width" 
             onKeyPress={(event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault()}}}
             name="width" onChange={changeWidth
             }></input>
 
             <p className="is-size-3">Radius</p>
-            <input class="input is-medium my-2"  
+            <input className="input is-rounded is-medium my-2"  
             type="text" 
             placeholder="Radius"
             onKeyPress={(event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault()}}}
             name="radius" 
             onChange={changeRadius
             }></input>
+
+            <p className="is-size-3">Colors</p>
+            <button className="button CButton pop p-6 mx-0 m-2 red"></button>
+            <button className="button CButton pop p-6 mx-0 m-2 blue"></button>
+            <button className="button CButton pop p-6 mx-0 m-2"></button>
+            <button className="button CButton pop p-6 mx-0 m-2"></button>
+            <button className="button CButton pop p-6 mx-0 m-2"></button>
+            <button className="button CButton pop p-6 mx-0 m-2"></button>
+            <button className="button CButton pop p-6 mx-0 m-2"></button>
+            <button className="button CButton pop p-6 mx-0 m-2"></button>
+            <button className="button CButton pop p-6 mx-0 m-2"></button>
+            
             
 
 

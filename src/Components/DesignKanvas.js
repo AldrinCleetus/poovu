@@ -44,8 +44,8 @@ const DesignKanvas = ({currentTool,shapeProperties}) => {
           return([
               ...prev,
               {
-              x: e.target.getStage().getPointerPosition().x,
-              y: e.target.getStage().getPointerPosition().y,
+              x: e.target.getStage().getPointerPosition().x - Number(shapeProperties.width)/2,
+              y: e.target.getStage().getPointerPosition().y - Number(shapeProperties.height)/2,
               width: Number(shapeProperties.width),
               height: Number(shapeProperties.height),
               fill: 'lightblue',
