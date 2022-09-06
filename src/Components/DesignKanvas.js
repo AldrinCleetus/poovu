@@ -3,47 +3,57 @@ import { Stage, Layer, Text, Group } from "react-konva";
 import Square from "../Utilities/Square";
 import Circles from "../Utilities/Circles";
 
-const DesignKanvas = () => {
+const DesignKanvas = ({currentTool}) => {
 
     const [allSquares,setSquares] = useState([])
     const [allCircles,setCircle] = useState([])
 
     const [selectedShape,setSelectedShape] = useState(null)
-    const [selectedTool, setSelectedTool] = useState("square")
 
+
+    
 
     const placeShape = (e)=>{
 
-    const clickedOnEmpty = e.target === e.target.getStage();
+      const clickedOnEmpty = e.target === e.target.getStage();
 
-    if(clickedOnEmpty){
-        setSelectedShape(null)
-        console.log("clicked on nothing")
-    }
+      if(clickedOnEmpty){
+          setSelectedShape(null)
+          console.log("clicked on nothing")
+      }
 
-    console.log(e.target.getStage().getPointerPosition())
+      const clearEverything = ()=>{
+        setSquares([])
+        setCircle([])
+      }
+      if(currentTool === "clear"){
+        clearEverything()
+      }
 
+     
 
-    if(selectedTool === "square" && clickedOnEmpty){
+      
+
+      if(currentTool === "square" && clickedOnEmpty){
+          
         
-      
-      
-      setSquares((prev) =>{
-        return([
-            ...prev,
-            {
-            x: e.target.getStage().getPointerPosition().x,
-            y: e.target.getStage().getPointerPosition().y,
-            width: 100,
-            height: 100,
-            fill: 'lightblue',
-            id: 'das' + Math.random(),
-            } 
-        ])
-        })
-    }
+        
+        setSquares((prev) =>{
+          return([
+              ...prev,
+              {
+              x: e.target.getStage().getPointerPosition().x,
+              y: e.target.getStage().getPointerPosition().y,
+              width: 100,
+              height: 100,
+              fill: 'lightblue',
+              id: 'das' + Math.random(),
+              } 
+          ])
+          })
+      }
 
-    if(selectedTool === "circle"){
+    if(currentTool === "circle"){
         setCircle((prev) =>{
         return([
             ...prev,

@@ -7,14 +7,16 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "bulma": "^0.9.4",
+    "fs": "^0.0.1-security",
     "konva": "^8.3.12",
     "node-sass": "^7.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-konva": "^18.2.1",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^4.0.3",
     "sass": "^1.54.8",
+    "util": "^0.12.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
