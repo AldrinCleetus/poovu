@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> Generate Beautiful Pokkal Designs using an our custom design tool
+> A web app that lets you make beautiful Pokkalam Designs
 
 ### 🏠 [Homepage](https://pokkaldesigns.vercel.app/)
 
